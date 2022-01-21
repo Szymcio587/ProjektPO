@@ -40,6 +40,15 @@ public:
 	void zmien_wyplate(float nowa_kwota) {
 		this->wyplata = nowa_kwota;
 	}
+
+	string zwroc_imie() {
+		return this->imie;
+	}
+
+	string zwroc_nazwisko() {
+		return this->nazwisko;
+	}
+
 };
 
 #endif // !PRACOWNIK_HPP

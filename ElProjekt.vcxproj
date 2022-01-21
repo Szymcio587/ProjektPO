@@ -143,8 +143,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dostawa.hpp" />
+    <ClInclude Include="Kamera.hpp" />
     <ClInclude Include="Manager.hpp" />
     <ClInclude Include="Pracownik.hpp" />
+    <ClInclude Include="System_ochrony.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

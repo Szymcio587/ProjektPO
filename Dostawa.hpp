@@ -18,7 +18,8 @@ public:
 	}
 
 	void zglos_nieprawidlowosc() {
-		this->odbiorca.zglos_problem();
+		if(!this->czy_kompletna)
+			this->odbiorca.zglos_problem();
 	}
 };
 
