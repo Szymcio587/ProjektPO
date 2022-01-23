@@ -45,7 +45,7 @@ using namespace std;
 
      if (aktualna_godzina > sklep.godziny_otwarcia[0] && aktualna_godzina < sklep.godziny_otwarcia[1]) {
          cout << "Jaka akcje chcesz wykonac?" << endl;
-         cout << "1 - Sprzedaj produkt" << endl;
+         cout << "1 - Kup produkt" << endl;
          cout << "2 - Wyswietl dostepne towary" << endl;
          if (sklep.otwarcie == true)
          {
@@ -60,23 +60,23 @@ using namespace std;
          {
          case 1:
          { int produkt;
-         cout << "Ktory produkt chcesz sprzedac: " << endl;
+         cout << "Ktory produkt chcesz kupic: " << endl;
          cout << "1 - " << sklep.towary[0] << endl;
          cout << "2 - " << sklep.towary[1] << endl;
          cout << "3 - " << sklep.towary[2] << endl;
          cin >> produkt;
          if (produkt == 1) {
-             cout << "Sprzedano " << sklep.towary[0] << endl;
+             cout << "Kupiono " << sklep.towary[0] << endl;
              kupujacy->stan_konta -= sklep.koszty_produktow[0];
          }
          else if (produkt == 2) {
-             cout << "Sprzedano " << sklep.towary[1] << endl;
+             cout << "Kupiono " << sklep.towary[1] << endl;
              kupujacy->stan_konta -= sklep.koszty_produktow[1];
          }
 
 
          else if (produkt == 3) {
-             cout << "Sprzedano " << sklep.towary[2] << endl;
+             cout << "Kupiono " << sklep.towary[2] << endl;
              kupujacy->stan_konta -= sklep.koszty_produktow[2];
          }
 
