@@ -1,12 +1,22 @@
 #include "Myjnia.h"
 
 #include<iostream>
+
 using namespace std;
 
-void Myjnia::platnosc(bool znizka) {
-	if (znizka)
+void Myjnia::uzupelnij_detergenty() {
+	detergenty = 80;
+}
+
+bool Myjnia::platnosc(bool znizka, int wybor, Klient k) {
+	if (!k.zaplac(cena_uslugi[wybor - 1])) {
+		cout << "Niestety, nie stac Cie na ta usluge" << endl;
+		return false;
+	}
+	else if (znizka)
 		cout << "*Naliczono rabat dla stalego klienta*" << endl;
 	cout << "*Wykorzystanie api banku do platnoœci bezgotowkowych*" << endl;
+	return true;
 
 }
 
@@ -28,13 +38,13 @@ int Myjnia::wybierz_usluge() {
 	for (int i = 0; i < 3; i++) {
 		cout << i + 1 << " - " << dostepne_funkcje[i] << " - " << cena_uslugi[i] << " zl" << endl;
 	}
-	int wybor = 0;
+	int wybor;
 	cin >> wybor;
 
 	return wybor;
 }
 
-void Myjnia::uruchom_funkcje() {
+void Myjnia::uruchom_funkcje(Klient k) {
 	cout << "Witaj na myjni!" << endl;
 	if (!this->obsluga_awarii()) {
 		cout << "Poziom detergentów zbyt niski, nie mozna skorzystac z myjni, przepraszamy!" << endl;
@@ -52,54 +62,58 @@ void Myjnia::uruchom_funkcje() {
 
 		if (decyzja == 't') staly_klient = true;
 
-		cout << "Czy chcesz otrzymac fakture? (t/n)" << endl;
-		cin >> decyzja;
+		bool czy_stac = platnosc(staly_klient, wybor, k);
 
-		int nrNip = 0;
+		if (czy_stac) {
+			cout << "Czy chcesz otrzymac fakture? (t/n)" << endl;
+			cin >> decyzja;
 
-		switch (decyzja)
-		{
-		case 't':
-			cout << "Podaj numer NIP: ";
-			cin >> nrNip;
-			break;
+			int nrNip = 0;
 
-		case 'n':
-			break;
+			switch (decyzja)
+			{
+			case 't':
+				cout << "Podaj numer NIP: ";
+				cin >> nrNip;
+				break;
 
-		default:
-			break;
+			case 'n':
+				break;
+
+			default:
+				break;
+			}
+
+			wydaj_fakture(nrNip);
+
+			switch (wybor)
+			{
+			case 1:
+				detergenty -= 2;
+				cout << "*Myjnia wykonuje mycie Podstawowe*" << endl;
+				//wypisywanie czasu zbyt dlugo trwa
+				break;
+
+			case 2:
+				detergenty -= 3;
+				cout << "*Myjnia wykonuje mycie Rozszerzone*" << endl;
+				//wypisywanie czasu zbyt dlugo trwa
+				break;
+
+			case 3:
+				detergenty -= 5;
+				cout << "*Myjnia wykonuje mycie Premium*" << endl;
+				//wypisywanie czasu zbyt dlugo trwa
+				break;
+			case 4:
+
+				return;
+
+			default:
+				break;
+			}
 		}
 
-		platnosc(staly_klient);
-		wydaj_fakture(nrNip);
-
-		switch (wybor)
-		{
-		case 1:
-			detergenty -= 2;
-			cout << "*Myjnia wykonuje mycie Podstawowe*" << endl;
-			//wypisywanie czasu zbyt dlugo trwa
-			break;
-
-		case 2:
-			detergenty -= 3;
-			cout << "*Myjnia wykonuje mycie Rozszerzone*" << endl;
-			//wypisywanie czasu zbyt dlugo trwa
-			break;
-
-		case 3:
-			detergenty -= 5;
-			cout << "*Myjnia wykonuje mycie Premium*" << endl;
-			//wypisywanie czasu zbyt dlugo trwa
-			break;
-		case 4:
-
-			return;
-
-		default:
-			break;
-		}
 	}
 
 }

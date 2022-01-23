@@ -29,7 +29,7 @@ int main() {
 	char odpowiedz;
 	Dystrybutor D1;
 	Myjnia M1;
-	Klient K1;
+	Klient K1(25, "Diesel", "Jan-Krzysztof Duda", true);
 	Pracownik P1("Gosia", "Samosia", 7);
 	Sklep S1;
 	Manager Man;
@@ -41,8 +41,8 @@ int main() {
 		cin >> wybor;
 		switch (wybor)
 		{
-		case 1:  break;
-		case 2: M1.uruchom_funkcje(); break;
+		case 1: break;
+		case 2: M1.uruchom_funkcje(K1); break;
 		case 3:  break;
 		case 4:  break;
 		case 5:	 break;
