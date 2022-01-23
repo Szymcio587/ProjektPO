@@ -43,7 +43,7 @@ int main() {
 		{
 		case 1: break;
 		case 2: M1.uruchom_funkcje(K1); break;
-		case 3:  break;
+		case 3: { P1.obsluz_sklep(S1, &K1);  cout << "Stan konta klienta " << K1.getStanKonta() << endl;} break;  
 		case 4:  break;
 		case 5:	 break;
 		case 6: break;

@@ -1,8 +1,10 @@
 #pragma once
 #include <iostream>
-#include <string>
+#include "Sklep.h"
 
 class Pracownik {
+	friend class Sklep;
+	friend class Klient;
 private:
 	float nadgodziny;
 	std::string imie, nazwisko;
@@ -24,4 +26,6 @@ public:
 
 	std::string zwroc_imie();
 	std::string zwroc_nazwisko();
+
+	void obsluz_sklep(Sklep sklep, Klient* kupujacy);
 };
