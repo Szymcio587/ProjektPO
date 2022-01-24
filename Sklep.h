@@ -11,7 +11,8 @@ private:
     int godziny_otwarcia[2] = { 7,22 };
     bool otwarcie = true;
 public:
-    void ustaw_towary(int, int, int);
-    void wyswietl_ilosc();
-
+    void ustawTowary(int, int, int);
+    void wyswietlIlosc();
+    int* ilosc();
 };
+

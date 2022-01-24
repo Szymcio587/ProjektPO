@@ -1,5 +1,6 @@
-﻿  Stacja_paliw.cpp
-D:\VisualStudio\source\repos\Stacja_Paliw\Stacja_Paliw\Sklep.h(9,53): warning C4305: "inicjowanie": obcięcie z "double" do "float"
-D:\VisualStudio\source\repos\Stacja_Paliw\Stacja_Paliw\Dystrybutor.h(11,52): warning C4305: "inicjowanie": obcięcie z "double" do "const float"
-D:\VisualStudio\source\repos\Stacja_Paliw\Stacja_Paliw\Myjnia.h(9,8): warning C4114: ten sam kwalifikator typu użyty więcej niż raz
+﻿  Myjnia.cpp
+  Stacja_paliw.cpp
+D:\VisualStudio\source\repos\Stacja_Paliw\Stacja_Paliw\Stacja_paliw.cpp(34,8): warning C4101: "S1": lokalna zmienna, do której nie istnieje odwołanie
+D:\VisualStudio\source\repos\Stacja_Paliw\Stacja_Paliw\Stacja_paliw.cpp(30,14): warning C4101: "D1": lokalna zmienna, do której nie istnieje odwołanie
+  Generowanie kodu...
   Stacja_Paliw.vcxproj -> D:\VisualStudio\source\repos\Stacja_Paliw\Debug\Stacja_Paliw.exe
