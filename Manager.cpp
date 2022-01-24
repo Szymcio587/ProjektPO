@@ -1,11 +1,11 @@
 #include "Manager.h"
 
- void Manager::dodaj_pracownika(std::string i, std::string n, float mamona) {
+ int Manager::dodaj_pracownika(std::string i, std::string n, float mamona) {
 	if (pracownicy < ILOSC_PRACOWNIKOW) {
 		Pracownik* nowy = new Pracownik(i, n, mamona);
 		osoby_zatrudnione[pracownicy++] = nowy;
 	}
-
+	return pracownicy;
 }
 
  void Manager::usun_pracownika() {

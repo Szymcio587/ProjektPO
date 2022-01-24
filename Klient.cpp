@@ -10,11 +10,3 @@ bool Klient::zaplac(float kwota) {
 	
 	return false;
 }
-
-string Klient::zwroc_silnik() {
-	return this->typ_silnika;
-}
-
-float Klient::zwroc_hajs() {
-	return this->stan_konta;
-}

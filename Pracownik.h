@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "Sklep.h"
-#include "Klient.h"
 
 class Pracownik {
 	friend class Sklep;

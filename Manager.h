@@ -19,7 +19,7 @@ public:
 	Manager(std::string i, std::string n, float mamona) :imie(i), nazwisko(n), pracownicy(0), wyplata(mamona) {};
 	Manager() = default;
 
-	void dodaj_pracownika(std::string i, std::string n, float mamona);
+	int dodaj_pracownika(std::string i, std::string n, float mamona);
 	void usun_pracownika();
 
 	~Manager();

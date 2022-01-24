@@ -5,11 +5,11 @@
 using namespace std;
 
 void Myjnia::uzupelnij_detergenty() {
-	this->detergenty = 80;
+	detergenty = 80;
 }
 
-bool Myjnia::platnosc(bool znizka, int wybor, Klient* k) {
-	if (!k->zaplac(cena_uslugi[wybor - 1]*(1 - static_cast<float>(znizka) * 0.05f))) {
+bool Myjnia::platnosc(bool znizka, int wybor, Klient k) {
+	if (!k.zaplac(cena_uslugi[wybor - 1])) {
 		cout << "Niestety, nie stac Cie na ta usluge" << endl;
 		return false;
 	}
@@ -44,10 +44,9 @@ int Myjnia::wybierz_usluge() {
 	return wybor;
 }
 
-void Myjnia::uruchom_funkcje(Klient* k) {
+void Myjnia::uruchom_funkcje(Klient k) {
 	cout << "Witaj na myjni!" << endl;
 	if (!this->obsluga_awarii()) {
-		this->uzupelnij_detergenty();
 		cout << "Poziom detergentów zbyt niski, nie mozna skorzystac z myjni, przepraszamy!" << endl;
 		return;
 	}
@@ -106,6 +105,10 @@ void Myjnia::uruchom_funkcje(Klient* k) {
 				cout << "*Myjnia wykonuje mycie Premium*" << endl;
 				//wypisywanie czasu zbyt dlugo trwa
 				break;
+			case 4:
+
+				return;
+
 			default:
 				break;
 			}

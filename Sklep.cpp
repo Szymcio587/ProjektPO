@@ -15,3 +15,7 @@ void Sklep::wyswietlIlosc()
 	cout << ilosc_towaru[1] << " hot-dogow" << endl;
 	cout << ilosc_towaru[2] << " ciastek" << endl;
 }
+int* Sklep::ilosc()
+{
+	return ilosc_towaru;
+}
