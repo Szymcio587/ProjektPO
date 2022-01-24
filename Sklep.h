@@ -13,5 +13,5 @@ private:
 public:
     void ustaw_towary(int, int, int);
     void wyswietl_ilosc();
-
+    int* ilosc();
 };
