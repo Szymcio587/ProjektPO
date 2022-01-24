@@ -1,17 +1,16 @@
 #include "Klient.h"
-
-using namespace std;
+#include <iostream>
 
 bool Klient::zaplac(float kwota) {
 	if (stan_konta >= kwota) {
 		stan_konta -= kwota;
 		return true;
 	}
-	
+
 	return false;
 }
 
-string Klient::zwroc_silnik() {
+std::string Klient::zwroc_silnik() {
 	return this->typ_silnika;
 }
 

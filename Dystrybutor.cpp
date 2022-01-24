@@ -54,7 +54,7 @@ int Dystrybutor::wybierz_usluge(Klient k) {
 void Dystrybutor::uruchom_funkcje(Klient* k) {
 	int ilosc_paliwa, wybor = wybierz_usluge(*k);
 	if (wybor) {
-		cout << "Witaj na dystrybutorze xD!" << endl << "Powiedz prosze, ile paliwa chcesz zatankowac" << endl;
+		cout << "Witaj na dystrybutorze!" << endl << "Powiedz prosze, ile LITROW paliwa chcesz zatankowac" << endl;
 		cin >> ilosc_paliwa;
 		if (!this->obsluga_awarii(ilosc_paliwa, wybor)) {
 			this->dodaj_paliwo(wybor);
