@@ -4,11 +4,11 @@
 
 using namespace std;
 
-void Myjnia::uzupelnij_detergenty() {
+void Myjnia::uzupelnij_detergenty() {		//funkcja odpowiedzialna za uzupelnienie detergentow
 	this->detergenty = 80;
 }
 
-bool Myjnia::platnosc(bool znizka, int wybor, Klient* k) {
+bool Myjnia::platnosc(bool znizka, int wybor, Klient* k) {					//sprawdza czy klienta stac na usluge
 	if (!k->zaplac(cena_uslugi[wybor - 1] * (1 - static_cast<float>(znizka) * 0.05f))) {
 		cout << "Niestety, nie stac Cie na ta usluge" << endl;
 		return false;
@@ -20,7 +20,7 @@ bool Myjnia::platnosc(bool znizka, int wybor, Klient* k) {
 
 }
 
-void Myjnia::wydaj_fakture(int nip) {
+void Myjnia::wydaj_fakture(int nip) {		//wydanie faktury w zaleznosci od preferencji
 	if (nip == 0)
 		cout << "*Myjnia drukuje paragon*" << endl;
 	else
@@ -28,12 +28,12 @@ void Myjnia::wydaj_fakture(int nip) {
 
 }
 
-bool Myjnia::obsluga_awarii() {
+bool Myjnia::obsluga_awarii() {			//jezeli jest za malo detergentow wyrzuc blad
 	if (detergenty < 5) return false;
 	else return true;
 }
 
-int Myjnia::wybierz_usluge() {
+int Myjnia::wybierz_usluge() {				//funkcja obslugujaca wybranie uslugi przez klienta
 	cout << "Wybierz program mycia:" << endl;
 	for (int i = 0; i < 3; i++) {
 		cout << i + 1 << " - " << dostepne_funkcje[i] << " - " << cena_uslugi[i] << " zl" << endl;
@@ -44,7 +44,11 @@ int Myjnia::wybierz_usluge() {
 	return wybor;
 }
 
-void Myjnia::uruchom_funkcje(Klient* k) {
+void Myjnia::uruchom_funkcje(Klient* k) {		/*odpowiedzialna za caly program uzywany w myjni, obsluguje awarie, uzupelnia detergenty
+												pozwala uzytkownikowi na wybranie odpowiedniego trybu mycia, wydanie faktury, zaplacenie
+												oraz skorzystanie z karty stalego klienta co pozwoli naliczyc znizke, w przypadku potrzeby
+												wydania faktury, zapyta o numer nip. W zaleznosci od wybranego trybu nalicza odpowiednia
+												oplate i wybiera odpowiedni czas mycia oraz ilosc uzytych detergentow*/
 	cout << "Witaj na myjni!" << endl;
 	if (!this->obsluga_awarii()) {
 		this->uzupelnij_detergenty();
