@@ -1,5 +1,0 @@
-﻿  Testy jednostkowe.cpp
-C:\Users\Szymon\Downloads\ProjektPO-main\Sklep.h(9,53): warning C4305: "inicjowanie": obcięcie z "double" do "float"
-C:\Users\Szymon\Downloads\ProjektPO-main\Testy jednostkowe\Testy jednostkowe.cpp(60,14): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-     Trwa tworzenie biblioteki C:\Users\Szymon\Downloads\ProjektPO-main\x64\Debug\Testy jednostkowe.lib i obiektu C:\Users\Szymon\Downloads\ProjektPO-main\x64\Debug\Testy jednostkowe.exp
-  Testy jednostkowe.vcxproj -> C:\Users\Szymon\Downloads\ProjektPO-main\x64\Debug\Testy jednostkowe.dll

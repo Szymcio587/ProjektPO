@@ -13,6 +13,6 @@ private:
 public:
     void ustawTowary(int, int, int);
     void wyswietlIlosc();
-    int* ilosc();
+
 };
 
