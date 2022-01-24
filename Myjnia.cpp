@@ -9,7 +9,7 @@ void Myjnia::uzupelnij_detergenty() {
 }
 
 bool Myjnia::platnosc(bool znizka, int wybor, Klient* k) {
-	if (!k->zaplac(cena_uslugi[wybor - 1]*(1 - static_cast<float>(znizka) * 0.05f))) {
+	if (!k->zaplac(cena_uslugi[wybor - 1] * (1 - static_cast<float>(znizka) * 0.05f))) {
 		cout << "Niestety, nie stac Cie na ta usluge" << endl;
 		return false;
 	}

@@ -20,4 +20,3 @@ public:
 	void odmierzaj_czas(int);
 	void uzupelnij_detergenty();
 };
-
